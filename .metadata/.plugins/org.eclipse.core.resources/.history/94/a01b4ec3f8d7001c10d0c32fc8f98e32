@@ -101,12 +101,9 @@ public class UserSearchServlet extends HttpServlet {
 				System.out.print("爱好：");
 				 StringBuffer sb = new  StringBuffer ("");
 				for(HobbyDto hobbyDto : result.getHobbyList()){
-					if(hobbyDto.getHobby() != null){
-						sb.append(hobbyDto.getHobby() + ",");	
-					}
 					
                     
-					
+					sb.append(hobbyDto.getHobby() + ",");
 				}
 				//当有爱好时才截取操作
 				if(!"".equals(sb.toString())){
