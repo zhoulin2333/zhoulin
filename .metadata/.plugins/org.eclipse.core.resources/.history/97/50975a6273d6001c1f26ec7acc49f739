@@ -1,0 +1,19 @@
+package co.jp.netwisdom.dto;
+
+import java.util.List;
+
+import co.jp.netwisdom.entity.Hobby;
+
+public class UserinfoHobbyDto {
+	private String username;
+	private String password;
+	private String sex;
+	private String major;
+	private String intro;
+	
+	private List<Hobby> hobbyList;
+	
+
+
+}
+	

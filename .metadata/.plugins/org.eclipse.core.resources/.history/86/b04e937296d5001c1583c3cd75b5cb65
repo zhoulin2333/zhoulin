@@ -1,0 +1,14 @@
+﻿<html>
+<head>
+<title>课后练习题</title>
+
+</head>
+
+
+<body>
+	<form action="userRegister" >
+		姓名:<input id="username" name="username"><input type="submit" value="注册用户">
+		
+	</form>
+</body>
+</html>

@@ -54,3 +54,12 @@
 0:0:0:0:0:0:0:1 - - [10/May/2022:14:19:23 +0900] "GET /YGCbook/images/dd-009.gif HTTP/1.1" 200 1452
 0:0:0:0:0:0:0:1 - - [10/May/2022:14:19:23 +0900] "GET /YGCbook/images/daodu33.gif HTTP/1.1" 200 58
 0:0:0:0:0:0:0:1 - - [10/May/2022:14:19:23 +0900] "GET /YGCbook/images/dd-m09.gif HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [10/May/2022:15:27:33 +0900] "GET /YGCbook/ HTTP/1.1" 200 32468
+0:0:0:0:0:0:0:1 - - [10/May/2022:15:27:35 +0900] "GET /YGCbook/images/like.png HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [10/May/2022:15:27:36 +0900] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [10/May/2022:15:30:02 +0900] "POST /YGCbook/FindBookInfoByIndexServlet?nowPage=1 HTTP/1.1" 200 276
+127.0.0.1 - - [10/May/2022:16:16:36 +0900] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [10/May/2022:16:16:42 +0900] "GET /YGCbook/ HTTP/1.1" 200 32468
+0:0:0:0:0:0:0:1 - - [10/May/2022:16:16:42 +0900] "GET /YGCbook/images/like.png HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [10/May/2022:16:16:43 +0900] "GET /YGCbook/images/like.png HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [10/May/2022:16:16:43 +0900] "GET /favicon.ico HTTP/1.1" 404 973

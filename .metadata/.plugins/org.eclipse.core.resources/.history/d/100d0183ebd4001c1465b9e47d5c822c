@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=GBK" pageEncoding="GBK" 
+     import="java.io.*,
+          java.util.*,
+          com.sun.image.codec.jpeg.*,
+          java.awt.*,
+          java.awt.image.*"%>
+<%String result = (String)request.getAttribute("aaa");%>
+<form action="<%=request.getContextPath()%>/MyFirstMapping">
+	<input type="text" name="key1"/>
+	<input type="submit">
+</form>
+<p>
+<%=result%>
+123
+<p>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="cn.key.dao.BookInfoDAO"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dao.UserinfoDAO"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dao.HobbyDAO"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Userinfo"/>
+<fullyQualifiedTypeName name="cn.key.mapping.USerInfoMapping"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dao.RxUserDAO"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.entity.RxUser"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.entity.UserinfoHobby"/>
+<fullyQualifiedTypeName name="util.MsgUtil"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Hobby"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserinfoHobbyDto"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.HobbyDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Myhobby"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dao.MyhobbyDAO"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+</qualifiedTypeNameHistroy>

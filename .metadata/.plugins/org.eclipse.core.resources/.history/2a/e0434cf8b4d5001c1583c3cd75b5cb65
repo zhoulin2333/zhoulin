@@ -1,0 +1,99 @@
+package co.jp.netwisdom.servlet;
+
+ 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cn.key.dao.BookInfoDAO;
+import cn.key.dao.SysAdminDAO;
+import cn.key.entity.SysAdmin;
+import co.jp.netwisdom.dao.HobbyDAO;
+import co.jp.netwisdom.dao.UserinfoDAO;
+import co.jp.netwisdom.entity.Hobby;
+import co.jp.netwisdom.entity.Userinfo;
+
+public class UserSearchServlet extends HttpServlet {
+	
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		 
+
+		//姓名
+		String username = request.getParameter("username");
+		//性别
+		String sex = request.getParameter("sex");
+
+		//专业
+		String major = request.getParameter("major");
+
+//		hobbyList.add(hobby3);
+//		
+		
+		//HobbyDAO hobbyDAO = new HobbyDAO();
+	
+		
+		
+		UserinfoDAO userinfoDAO = new UserinfoDAO();
+		List<Userinfo> list = userinfoDAO.findById(username,sex,major);
+		System.out.println("用户信息如下：");
+		for(Userinfo userinfo: list ){
+			System.out.println("用户信息如下：");
+			System.out.println("姓名：" + userinfo.getUsername());
+			System.out.println("密码：" + userinfo.getPassword());
+			System.out.println("性别：" + userinfo.getSex());
+			System.out.println("专业：" + userinfo.getMajor());
+			System.out.println("简介：" + userinfo.getIntro());
+			System.out.println("简介：" + userinfo.getIntro());
+			System.out.println("简介：" + userinfo.getIntro());
+			
+			
+		}
+
+		
+		
+		
+		System.out.println("取得成功");
+		System.out.println("向画面进行表示");
+
+		//用户信息表更新
+		//boolean result = dao.save(new Userinfo(userName,passWord,sex,major,intro));
+//	
+//	    boolean successFlag = true;
+//		//用户信息表登录
+//        if(userinfoDAO.save(new Userinfo(username,password,sex,major,intro))){
+//        	System.out.println("用户信息表插入成功");
+//        }else{
+//        	System.out.println("用户信息表插入失败");
+//        	successFlag =  false;
+//        }
+//        //用户爱好表登录
+//        if(hobbyDAO.save(hobbyList)){
+//        	System.out.println("用户爱好表插入成功");
+//        }else{
+//        	System.out.println("用户爱好表插入失败");
+//        	successFlag =  false;
+//        }
+
+		if( true){
+		//request.setAttribute("admin", admin);
+		    request.getRequestDispatcher("/CopyuserReg.jsp").forward(request, response);
+		}else{
+			request.getRequestDispatcher("/CopyuserReg2.jsp").forward(request, response);
+			
+		}
+	}
+    //                                    post                                       
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//如果是post进来的仍要进行get方式
+		this.doGet(request, response);
+	}
+
+}
