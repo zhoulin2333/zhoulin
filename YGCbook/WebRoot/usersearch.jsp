@@ -32,7 +32,7 @@
              <%List<UserinfoHobbyDto> dtos =(List<UserinfoHobbyDto>)request.getAttribute("dtos");%>
              <%if(dtos != null){%>
               <table border = "1" align ="center" width ="90%">
-                 <tr bgcolor = "yellow">
+                 <tr bgcolor = "#087670">
 		               <td>姓名</td>
 		               <td>密码</td>
 		               <td>性别</td>
@@ -40,9 +40,13 @@
 		               <td>专业</td>
 		               <td>简介</td>
                   </tr>
-             <% for(UserinfoHobbyDto dto : dtos){%>
-                  <tr bgcolor = "red">
-                       <td><%=dto.getUsername() %></td>
+             <%int line = 0; %>
+             <% for(UserinfoHobbyDto dto : dtos){
+                   ++line;%>
+                  
+                  <%if(line%2 == 0){ %><tr bgcolor = "#DEB887">
+                  <%}else{ %><tr bgcolor = "#E9967A"><%} %>
+                       <td><a href= "userUpdateInit?username=<%=dto.getUsername()%>"><%=dto.getUsername()%></td>
 	                   <td><%=dto.getPassword() %></td>
 	                   <td>
 	                   <%

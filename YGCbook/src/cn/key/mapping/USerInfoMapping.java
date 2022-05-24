@@ -11,15 +11,14 @@ import co.jp.netwisdom.entity.UserinfoHobby;
 public class USerInfoMapping implements IResultSetMapping{
 
 	@Override
-	public UserinfoHobby mapping(ResultSet rs) throws SQLException {
+	public Userinfo mapping(ResultSet rs) throws SQLException {
 		int i = 1;
-		UserinfoHobby userinfoHobby = new UserinfoHobby(rs.getString(i++),
+		Userinfo userinfo = new Userinfo(rs.getString(i++),
 														rs.getString(i++), 
 														rs.getString(i++), 
 														rs.getString(i++), 
-														rs.getString(i++),
 														rs.getString(i++));
-		return userinfoHobby;
+		return userinfo;
 	}
 	
 }

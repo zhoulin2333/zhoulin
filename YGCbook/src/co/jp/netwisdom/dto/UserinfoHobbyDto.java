@@ -11,7 +11,16 @@ public class UserinfoHobbyDto {
 	private String sex;
 	private String major;
 	private String intro;
+	private String hobbys;
 	
+	public String getHobbys() {
+		return hobbys;
+	}
+
+	public void setHobbys(String hobbys) {
+		this.hobbys = hobbys;
+	}
+
 	private List<HobbyDto> hobbyList = new ArrayList<HobbyDto>();
 	
 	

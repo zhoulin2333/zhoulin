@@ -93,9 +93,9 @@ public class UserRigsterServlet extends HttpServlet {
 
 		if(successFlag = true){
 		//request.setAttribute("admin", admin);
-		    request.getRequestDispatcher("/CopyuserReg.jsp").forward(request, response);
+		    request.getRequestDispatcher("/userRegsuccess.jsp").forward(request, response);
 		}else{
-			request.getRequestDispatcher("/CopyuserReg2.jsp").forward(request, response);
+			request.getRequestDispatcher("/userRegErr.jsp").forward(request, response);
 			
 		}
 	}

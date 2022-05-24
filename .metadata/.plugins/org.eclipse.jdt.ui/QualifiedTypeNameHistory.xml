@@ -16,7 +16,7 @@
 <fullyQualifiedTypeName name="co.jp.netwisdom.dto.HobbyDto"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.entity.Myhobby"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.dao.MyhobbyDAO"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

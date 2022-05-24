@@ -18,8 +18,8 @@ public class HobbyDAO {
 	
 	public boolean save(List list) {
 		int row = 0;
-		String sql = "insert into hobby(username,hobby) " +
-						" values(?,?)";
+		String sql = "insert into hobby(username,hobby,delFlg) " +
+						" values(?,?,?)";
 		
 		try {
 		    for(Object object:list){
@@ -29,18 +29,12 @@ public class HobbyDAO {
 				   
 				   values = new Object[]{
 							hobby.getUsername(), 
-							hobby.getHobby()};
+							hobby.getHobby(),
+							"0"};
 							row = template.updata(sql, values);
             	  if(row == 0){
             		        break;
             	  }
-
-
-        
-
-		    	   
-
-
 		    }		     
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -49,7 +43,29 @@ public class HobbyDAO {
 		}
 		return (row == 1);
 	}
+	
+	/**
+	 * 伦理删除
+	 * @param userinfo
+	 * @return
+	 */
+	public boolean delHobby(String username) {
+		
+		String sql = "update hobby set delFlg = '1' where username = ?";
+
+		Object[] values = new Object[]{
+				        username};
+		try {
+			template.updata(sql, values);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
 }
+
 	
 	
 	
