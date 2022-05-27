@@ -28,8 +28,7 @@
     	  }
       }
       function del(){
-    	  alert(123);
-    	  //document.getElementById("form").action="/";
+    	  document.getElementById("form").action="delchecked.do";
       }
     </script>
 

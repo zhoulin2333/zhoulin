@@ -42,6 +42,12 @@
                 scope="request">
                 <forward name="UserDelSuccess" path="/usersearch.jsp"/>
         </action>
+                <action path="/delchecked"
+                type="co.jp.netwisdom.action.DelcheckedAction"
+                name="UserForm"
+                scope="request">
+                <forward name="delcheckedSuccess" path="/usersearch.jsp"/>
+        </action>
         
     </action-mappings>
     <message-resources key = "userResource"  parameter="ApplicationResources_zh_CN"/>
