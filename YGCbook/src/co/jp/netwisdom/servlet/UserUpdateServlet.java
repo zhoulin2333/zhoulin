@@ -35,6 +35,7 @@ public class UserUpdateServlet extends HttpServlet {
 		//简介
 		String intro = request.getParameter("intro");
 		
+		
 		//爱好 TODO
 		String[] hobbyArray = request.getParameterValues("hobby");
 
@@ -50,22 +51,26 @@ public class UserUpdateServlet extends HttpServlet {
 			
 		}	
 		
+		
+		UserinfoDAO userinfoDAO = new UserinfoDAO();
 		HobbyDAO hobbyDAO = new HobbyDAO();
 		//dao.save(hobbyList);
-		UserinfoDAO userinfoDAO = new UserinfoDAO();
+		
 		//用户信息表更新
 		//boolean result = dao.save(new Userinfo(userName,passWord,sex,major,intro));
 	   
 		
 		
 		//用户更新表Flag
-	    boolean updateUserInfoFlag = true;
+	    boolean updateUserInfoFlag1 = true;
 	    //用户信息表论理删除
-	    updateUserInfoFlag = userinfoDAO.delUserinfo(username);
+	    updateUserInfoFlag1 = userinfoDAO.delUserinfo(username);
+	    
+	    boolean updateUserInfoFlag2 = true;
 	    //进行更新操作
-	    updateUserInfoFlag = userinfoDAO.save(new Userinfo(username,password,sex,major,intro));
+	    updateUserInfoFlag2 = userinfoDAO.save(new Userinfo(username,password,sex,major,intro));
 
-        if(updateUserInfoFlag){
+        if(updateUserInfoFlag1==true && updateUserInfoFlag2 == true){
         	System.out.println("用户信息表更新成功");
         }else{
         	System.out.println("用户信息更新失败");

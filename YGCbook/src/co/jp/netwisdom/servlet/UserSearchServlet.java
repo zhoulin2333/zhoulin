@@ -34,14 +34,6 @@ public class UserSearchServlet extends HttpServlet {
 		String major = request.getParameter("major");
 		
 		
-
-//		hobbyList.add(hobby3);
-//		
-		
-		//HobbyDAO hobbyDAO = new HobbyDAO();
-	
-		
-		
 		UserinfoDAO userinfoDAO = new UserinfoDAO();
 		List<UserinfoHobby> list = userinfoDAO.findUserinfoAndHobby(username, sex, major);
 
@@ -87,82 +79,39 @@ public class UserSearchServlet extends HttpServlet {
 			}
 		
 		
+		 }
+			
+		request.setAttribute("dtos",dtos);
 		
-			
-			request.setAttribute("dtos",dtos);
-			
-			for(UserinfoHobbyDto result : dtos){
-				System.out.println("-------------------");
-				System.out.println("姓名：" + result.getUsername());
-				System.out.println("密码：" + result.getPassword());
-				System.out.println("性别：" + result.getSex());
-				System.out.println("专业：" + result.getMajor());
-				System.out.println("简介：" + result.getIntro());
-				System.out.print("爱好：");
-				 StringBuffer sb = new  StringBuffer ("");
-				for(HobbyDto hobbyDto : result.getHobbyList()){
-					if(hobbyDto.getHobby() != null){
-						sb.append(hobbyDto.getHobby() + ",");	
-					}
-					
-                    
-					
+		for(UserinfoHobbyDto result : dtos){
+			System.out.println("-------------------");
+			System.out.println("姓名：" + result.getUsername());
+			System.out.println("密码：" + result.getPassword());
+			System.out.println("性别：" + result.getSex());
+			System.out.println("专业：" + result.getMajor());
+			System.out.println("简介：" + result.getIntro());
+			System.out.print("爱好：");
+			 StringBuffer sb = new  StringBuffer ("");
+			for(HobbyDto hobbyDto : result.getHobbyList()){
+				if(hobbyDto.getHobby() != null){
+					sb.append(hobbyDto.getHobby() + ",");	
 				}
-				//当有爱好时才截取操作
-				if(!"".equals(sb.toString())){
-					if(",".equals(sb.toString().substring(sb.toString().length()-1))){
-						System.out.println(sb.toString().substring(0, sb.toString().length()-1));
-						
-					}else{
-						System.out.println(sb.toString());
-					}
+			}
+			//当有爱好时才截取操作
+			if(!"".equals(sb.toString())){
+				if(",".equals(sb.toString().substring(sb.toString().length()-1))){
+					System.out.println(sb.toString().substring(0, sb.toString().length()-1));
 					
+				}else{
+					System.out.println(sb.toString());
 				}
-				
-				
-               
-//                List<> hbarr = new ArrayList<HobbyDto>();
-//				for(HobbyDto hobbyDto : result.getHobbyList()){
-//					
-//					
-//					System.out.print(hobbyDto.getHobby());
-//					
-//				}
-//				System.out.println("");
-//				System.out.println("-------------------");
-				 
 				
 			}
-	
-			
 			
 		}
-
-		
-		
-		
+				
 		System.out.println("取得成功");
 		System.out.println("向画面进行表示");
-
-		//用户信息表更新
-		//boolean result = dao.save(new Userinfo(userName,passWord,sex,major,intro));
-//	
-//	    boolean successFlag = true;
-//		//用户信息表登录
-//        if(userinfoDAO.save(new Userinfo(username,password,sex,major,intro))){
-//        	System.out.println("用户信息表插入成功");
-//        }else{
-//        	System.out.println("用户信息表插入失败");
-//        	successFlag =  false;
-//        }
-//        //用户爱好表登录
-//        if(hobbyDAO.save(hobbyList)){
-//        	System.out.println("用户爱好表插入成功");
-//        }else{
-//        	System.out.println("用户爱好表插入失败");
-//        	successFlag =  false;
-//        }
-
 		if( true){
 		//request.setAttribute("admin", admin);
 		    request.getRequestDispatcher("/usersearch.jsp").forward(request, response);

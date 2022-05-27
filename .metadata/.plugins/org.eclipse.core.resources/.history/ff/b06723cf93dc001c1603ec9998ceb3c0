@@ -1,0 +1,45 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RunAnimal {
+	 public static void main(String[] args) {
+		
+		 
+		 Animal animal1 = new Animal("猴子","母",6);
+		 Animal animal2 = new Animal("大象","公",8);
+		 Animal animal3 = new Animal("狮子","母",9);
+//		 Animal[] animal = new Animal[]{animal1,animal2,animal3};
+//		 
+//		 List<Animal> animals = new ArrayList<Animal>();
+//		 for(int i=0;i<animal.length;i++){
+//			   animals.add(animal[i]);
+//			   System.out.println(animals.get(0).getName()+"'"+
+//					              animals.get(0).getGender()+"'"+
+//					              animals.get(0).getAge());
+//		 }
+//		 
+//		 
+		 List<Animal> animals = new ArrayList<Animal>();
+		 animals.add(animal1);
+		 animals.add(animal2);
+		 animals.add(animal3);
+		 
+		 for(int i=0;i<animals.size();i++){;
+		       Animal animal22 = new Animal();
+			   System.out.println(animal22.getName()+","+
+				            animal22.getAge()+","+
+				            animal22.getGender());
+		 }
+		 
+		 
+		 for(Animal anm:animals){
+			 Animal animal12 = new Animal();
+			 System.out.println(animal12.getName()+","+
+					            animal12.getAge()+","+
+					            animal12.getGender());
+		 }
+	}
+
+}

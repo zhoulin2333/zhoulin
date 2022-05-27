@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+        <form-beans>
+           <form-bean name="UserForm" type="co.jp.netwisdom.form.UserForm"/> 
+           <form-bean name="UserSearchForm" type="co.jp.netwisdom.form.UserSearchForm"/> 
+           <form-bean name="UserUpdateForm" type="co.jp.netwisdom.form.UserUpdateForm"/> 
+           <form-bean name="UserForm" type="co.jp.netwisdom.form.UserForm"/> 
+           <form-bean name="UserForm" type="co.jp.netwisdom.form.UserForm"/> 
+        </form-beans>
+        
+     <action-mappings>      
+        <action path="/userRegister"
+                type="co.jp.netwisdom.action.UserRigsterAction"
+                name="UserForm"
+                scope="request">
+                <forward name="success" path="/userRegsuccess.jsp"/>
+                <forward name="error" path="/userRegErr.jsp"/>
+        </action>
+        <action path="/userSearch"
+                type="co.jp.netwisdom.action.userSearchAction"
+                name="UserSearchForm"
+                scope="request">
+                <forward name="success" path="/usersearch.jsp"/>
+                <forward name="error" path="/CopyuserReg2.jsp"/>
+        </action>
+
+        <action path="/userUpdate"
+                type="co.jp.netwisdom.action./userUpdateAction"
+                name="UserUpdateForm"
+                scope="request">
+                <forward name="success" path="/userUpdatesuccess.jsp"/>
+        </action>
+        <action path="/userDel"
+                type="co.jp.netwisdom.action.UserDelAction"
+                name="UserForm"
+                scope="request">
+                <forward name="success" path="/usersearch.jsp"/>
+        </action>
+        <action path="/userUpdateInit"
+                type="co.jp.netwisdom.action."
+                name="UserForm"
+                scope="request">
+                <forward name="success" path="/userReg.jsp"/>
+                <forward name="error" path="/userReg.jsp"/>                
+        </action>
+    </action-mappings>
+</struts-config>

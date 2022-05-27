@@ -14,10 +14,10 @@ public class USerInfoMapping implements IResultSetMapping{
 	public Userinfo mapping(ResultSet rs) throws SQLException {
 		int i = 1;
 		Userinfo userinfo = new Userinfo(rs.getString(i++),
-														rs.getString(i++), 
-														rs.getString(i++), 
-														rs.getString(i++), 
-														rs.getString(i++));
+										 rs.getString(i++), 
+										 rs.getString(i++), 
+										 rs.getString(i++), 
+										 rs.getString(i++));
 		return userinfo;
 	}
 	

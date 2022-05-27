@@ -33,7 +33,7 @@ public class UserUpdateInitServlet extends HttpServlet {
 
 		List<UserinfoHobbyDto> dtos = new ArrayList<UserinfoHobbyDto>();
 		
-		Map<String, String>  userNameMap  = new HashMap<String, String>();
+		//Map<String, String>  userNameMap  = new HashMap<String, String>();
 		//标识dtos是否被创建
 		List<String> userNames =  new ArrayList<String>();
 		
@@ -72,11 +72,13 @@ public class UserUpdateInitServlet extends HttpServlet {
 			StringBuffer sb = new  StringBuffer ("");
 			for(HobbyDto hobbyDto : result.getHobbyList()){
 				sb.append(hobbyDto.getHobby());
-			}
+			} 
 			result.setHobbys(sb.toString());
 			System.out.println(result.getHobbys());
 		}
+		//
 		request.setAttribute("dto",dtos.get(0));
+		
 		if( true){
 		//request.setAttribute("admin", admin);
 		    request.getRequestDispatcher("/userReg.jsp").forward(request, response);

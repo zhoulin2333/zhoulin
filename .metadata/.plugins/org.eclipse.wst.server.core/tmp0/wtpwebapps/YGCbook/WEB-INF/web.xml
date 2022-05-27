@@ -645,16 +645,7 @@
   
   
   
-  
-  <servlet>
-    <servlet-name>RxUser</servlet-name>
-    <servlet-class>co.jp.netwisdom.servlet.RxUserServlet</servlet-class>
-  </servlet>
 
-  <servlet-mapping>
-    <servlet-name>RxUser</servlet-name>
-    <url-pattern>/rxUser</url-pattern>
-  </servlet-mapping>
   
   
   
@@ -708,6 +699,55 @@
   <!--
           �û����¼��û�ɾ������END
    -->
+  
+  
+  
+  
+  
+    <!--
+          �û����¼��û�ɾ������START
+   -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+     <param-name>config</param-name>
+     <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <!--
+          �û����¼��û�ɾ������END
+   -->
+  
+  
+  
+   <!-- 练习  -->
+  <servlet>
+    <servlet-name>RxUser</servlet-name>
+    <servlet-class>co.jp.zhoulin.servlet.RxUserServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RxUser</servlet-name>
+    <url-pattern>/rxUser</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <servlet-name>zlsearch</servlet-name>
+    <servlet-class>co.jp.zhoulin.servlet.Zlsearch</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>zlsearch</servlet-name>
+    <url-pattern>/zlsearch</url-pattern>
+  </servlet-mapping> 
+  
   
 
   

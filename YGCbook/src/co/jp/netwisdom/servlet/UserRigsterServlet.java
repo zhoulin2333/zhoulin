@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cn.key.dao.BookInfoDAO;
-import cn.key.dao.SysAdminDAO;
-import cn.key.entity.SysAdmin;
 import co.jp.netwisdom.dao.HobbyDAO;
 import co.jp.netwisdom.dao.UserinfoDAO;
 import co.jp.netwisdom.entity.Hobby;
@@ -20,6 +17,10 @@ import co.jp.netwisdom.entity.Userinfo;
 
 public class UserRigsterServlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -39,7 +40,7 @@ public class UserRigsterServlet extends HttpServlet {
 		String[] hobbyArray = request.getParameterValues("hobby");
 
 		
-		List hobbyList = new ArrayList();
+		List<Hobby> hobbyList = new ArrayList<>();
 		
 		for(int i=0;i<hobbyArray.length;i++){
 			 
@@ -91,7 +92,7 @@ public class UserRigsterServlet extends HttpServlet {
         	successFlag =  false;
         }
 
-		if(successFlag = true){
+		if(successFlag == true){
 		//request.setAttribute("admin", admin);
 		    request.getRequestDispatcher("/userRegsuccess.jsp").forward(request, response);
 		}else{

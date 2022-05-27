@@ -1,0 +1,13 @@
+package co.jp.zhoulin.dto;
+
+public class ZLuserHobbysDto {
+	private String username ;
+	private String password ;
+	private String sex ;
+	private String major ;
+	private String intro ;
+	
+	private List<>
+	
+
+}

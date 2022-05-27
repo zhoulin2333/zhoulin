@@ -1,0 +1,21 @@
+package co.jp.netwisdom.form;
+
+import org.apache.struts.action.ActionForm;
+
+public class UserUpdateForm extends ActionForm {
+
+	//姓名
+	private String username ;
+	//密码
+	private String password ;
+	//性别
+	private String sex ;
+	//专业
+	private String major;
+	//简介
+	private String intro ;
+	//爱好 TODO
+	private String[] hobby ;
+	
+	
+}

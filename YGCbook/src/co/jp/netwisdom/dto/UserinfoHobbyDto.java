@@ -23,6 +23,11 @@ public class UserinfoHobbyDto {
 
 	private List<HobbyDto> hobbyList = new ArrayList<HobbyDto>();
 	
+
+	public UserinfoHobbyDto() {
+		super();
+
+	}
 	
 
 	public UserinfoHobbyDto(String username, String password, String sex, String major, String intro) {

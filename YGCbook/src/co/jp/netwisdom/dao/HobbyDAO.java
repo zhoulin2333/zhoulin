@@ -2,29 +2,22 @@ package co.jp.netwisdom.dao;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Vector;
-
-import cn.key.Tools.DataTool;
 import cn.key.dbManager.JdbcTemplate;
-import cn.key.entity.BookInfo;
-import cn.key.mapping.BookInfoMapping;
 import co.jp.netwisdom.entity.Hobby;
-import co.jp.netwisdom.entity.Userinfo;
 
 public class HobbyDAO {
 	private JdbcTemplate template = new JdbcTemplate();
 	
 	
 	
-	public boolean save(List list) {
+	public boolean save(List<Hobby> list) {
 		int row = 0;
 		String sql = "insert into hobby(username,hobby,delFlg) " +
 						" values(?,?,?)";
 		
 		try {
-		    for(Object object:list){
+		    for(Hobby hobby:list){
 
-				   Hobby hobby = (Hobby)object; 
 				   Object[] values = null;
 				   
 				   values = new Object[]{
