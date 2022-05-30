@@ -29,6 +29,7 @@
       }
       function del(){
     	  document.getElementById("form").action="delchecked.do";
+    	  window.location = "delchecked.do?" ;
       }
     </script>
 
@@ -54,7 +55,7 @@
             <%if(dtos != null){%>
               <table border = "1" align ="center" width ="90%">
                  <tr bgcolor = "#087670">
-                       <td style="width:20"><input type ="checkbox" id="allcheck" name ="check" onclick="delAll()"></td>
+                       <td style="width:20"><input type ="checkbox" id="allcheck" name ="allcheck" onclick="delAll()"></td>
 		               <td>姓名</td>
 		               <td>密码</td>
 		               <td>性别</td>
@@ -75,7 +76,7 @@
                   
                   <%if(line%2 == 0){ %><tr bgcolor = "#DEB887">
                   <%}else{ %><tr bgcolor = "#E9967A"><%} %>
-                       <td><input type ="checkbox" id= "check" name ="check" ></td>	
+                       <td><input type ="checkbox" id= "check" name ="check"  value ="<%=dto.getUsername()%>"></td>	
                        <td><a href= "userUpdateInit.do?username=<%=dto.getUsername()%>"><%=dto.getUsername()%></td>
 	                   <td><%=dto.getPassword() %></td>
 	                   <td>
@@ -132,7 +133,7 @@
                   </tr>
               <%}%>
                   <tr align="center" bgcolor = "#087670"> 
-                       <td colspan="9" ><input type = "button" name="deleteall" value="一括删除" onclick="del()"></td>
+                       <td colspan="9" ><input type = "submit" name="deleteall" value="一括删除" onclick="del()"></td>
                   </tr>
               </table>
             <%}%>

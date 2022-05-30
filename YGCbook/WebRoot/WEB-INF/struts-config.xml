@@ -42,11 +42,16 @@
                 scope="request">
                 <forward name="UserDelSuccess" path="/usersearch.jsp"/>
         </action>
-                <action path="/delchecked"
+        <action path="/delchecked"
                 type="co.jp.netwisdom.action.DelcheckedAction"
                 name="UserForm"
                 scope="request">
                 <forward name="delcheckedSuccess" path="/usersearch.jsp"/>
+        </action>
+        <action path="/usernameCheck"
+                type="co.jp.netwisdom.action.UsernameCheckAction"
+                name="UserForm"
+                scope="request">
         </action>
         
     </action-mappings>

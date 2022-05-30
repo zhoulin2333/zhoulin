@@ -10,6 +10,8 @@ import cn.key.entity.BookInfo;
 import cn.key.mapping.BookInfoMapping;
 import cn.key.mapping.USerInfoHobbyMapping;
 import cn.key.mapping.USerInfoMapping;
+import cn.key.mapping.UserNameMapping;
+import co.jp.netwisdom.dto.UserNameDto;
 import co.jp.netwisdom.entity.Userinfo;
 import co.jp.netwisdom.entity.UserinfoHobby;
 
@@ -133,7 +135,23 @@ public class UserinfoDAO {
 		}
 		return (row == 1);
 	}
+	
+	public List<UserNameDto> findName(String username) {
+		String sql = "select username from userinfo where delFlg = '0' and username= '";
+        //用户名      
+	    sql = sql + username +"'";
+
+		List<UserNameDto> list = new Vector<UserNameDto>();
+		try {
+			list = template.selete(sql, new UserNameMapping());
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+    } 
 }
+
+
 	
 	
 	

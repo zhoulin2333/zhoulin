@@ -12,7 +12,29 @@
         	document.getElementById("form").action = actionName ;
         	document.getElementById("username").disabled = false;
         }
-        
+        function executeAjax(){
+        	$.ajax({
+        		url:'usernameCheck.do?username=' + document.getElementById("username").value,
+        		type:'post',//数据发送方式
+        		datatype:'text',//接收数据格式
+        		error:function(flag){
+        		},
+        		async:true,//异步加载
+        		success:function(flag){
+        			if(flag == 0){
+        				//用户未被注册
+            			document.getElementById("flag").innerHTML="";
+            			document.getElementById("registered").disabled = false ;
+        			}else{
+        				//用户已被注册
+            			document.getElementById("flag").innerHTML="用户已存在";
+            			document.getElementById("registered").disabled = "disabled";
+        			}
+        		}
+        	});
+        }
+    </script>
+    <script src="jquery-3.2.1.min.js">
     </script>
   </head>
 
@@ -47,7 +69,7 @@
   <%}else{%>
   <body>
 	<form action="userRegister.do" >
-		<bean:message bundle="userResource" key="username"/>:<input id="username" name="username"  ><br>
+		<bean:message bundle="userResource" key="username"/>:<input onblur="executeAjax()" id="username" name="username"  ><font color="red" id="flag"></font><br>
 		<bean:message bundle="userResource" key="password"/>:<input type="password" id="password" name = "password"><br>
 		<bean:message bundle="userResource" key="sex"/>:<input type="radio" name="sex" checked  id="sex1" value="0" checked ><bean:message bundle="userResource" key="man"/>
 		<input type="radio"  name="sex" id="sex2"  value="1" ><bean:message bundle="userResource" key="women"/><br>
@@ -65,7 +87,7 @@
 		</select><br>
 		<bean:message bundle="userResource" key="summary"/>:<br><textarea id="intro1"  name="intro"></textarea><br>
 		 
-		<input type="submit" value="<bean:message bundle="userResource" key="registeredUser"/>">
+		<input type="submit" id="registered" value="<bean:message bundle="userResource" key="registeredUser"/>">
 		<input type="button" value="<bean:message bundle="userResource" key="return"/>">
 	</form>
   </body>
