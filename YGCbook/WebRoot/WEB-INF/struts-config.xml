@@ -53,6 +53,12 @@
                 name="UserForm"
                 scope="request">
         </action>
+        <action path="/searchUser"
+                type="co.jp.netwisdom.action.AjaxSearchUserAction"
+                name="UserForm"
+                scope="request">
+        </action>
+        
         
     </action-mappings>
     <message-resources key = "userResource"  parameter="ApplicationResources_zh_CN"/>

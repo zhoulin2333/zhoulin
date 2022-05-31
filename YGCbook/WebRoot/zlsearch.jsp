@@ -17,8 +17,7 @@
 	     <input type="submit" value ="检索"><br/><br/>
 	           检索一览
 	    <hr>
-	    <center>
-	    <table border = 1px style="width:80% ; text-align:center">
+	    <table border = 1px  width="90%"  align="center" >
 	       <tr>
 	         <td>姓名</td>
 	         <td>密码</td>
@@ -28,7 +27,6 @@
 	         <td>简介</td>
 	       </tr>
 	    </table>
-	    </center>
 	     
     </form>
   </body>

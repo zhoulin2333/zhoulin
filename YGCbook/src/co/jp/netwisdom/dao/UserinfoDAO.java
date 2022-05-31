@@ -75,12 +75,12 @@ public class UserinfoDAO {
 				   + " from userinfo left join hobby"
 	               + " on userinfo.username = hobby.username where" ;
 		
-		if (!"".equals(username)){
+		if (username != null & !"".equals(username)){
 			sql = sql + " userinfo.username = '"+ username +"' and";
 		}
 			sql = sql + " sex ='" + sex +"'";		
 			
-		if (!"".equals(major)){
+		if (major != null & !"".equals(major)){
 			sql = sql + " and major = '"+ major +"'";
 		}
 		
@@ -94,9 +94,6 @@ public class UserinfoDAO {
 		
 		return list;
 	} 
-
-
-
 
 	public List<UserinfoHobby> findUserinfoAndHobby(String username) {
 		String sql = "select  userinfo.username,password,sex,major,intro,hobby"

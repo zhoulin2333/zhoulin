@@ -7,6 +7,8 @@
 <html>
   <head>
     <title>用户注册画面</title>
+    <script src="jquery-3.2.1.min.js">
+    </script>
     <script>
         function changeActionName(actionName){
         	document.getElementById("form").action = actionName ;
@@ -34,8 +36,7 @@
         	});
         }
     </script>
-    <script src="jquery-3.2.1.min.js">
-    </script>
+
   </head>
 
   <% UserinfoHobbyDto dto = (UserinfoHobbyDto)request.getAttribute("dto"); %>

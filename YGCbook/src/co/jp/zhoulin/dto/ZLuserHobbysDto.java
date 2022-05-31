@@ -10,7 +10,7 @@ public class ZLuserHobbysDto {
 	private String major ;
 	private String intro ;
 	
-	private List<ZLUserHobbyDto> hobby = new ArrayList<ZLUserHobbyDto>();
+	private List<HobbyDto> hobby = new ArrayList<HobbyDto>();
 	
 	
 
@@ -20,7 +20,7 @@ public class ZLuserHobbysDto {
 	}
 
 	public ZLuserHobbysDto(String username, String password, String sex, String major, String intro,
-			List<ZLUserHobbyDto> hobby) {
+			List<HobbyDto> hobby) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -70,13 +70,15 @@ public class ZLuserHobbysDto {
 		this.intro = intro;
 	}
 
-	public List<ZLUserHobbyDto> getHobby() {
+	public List<HobbyDto> getHobby() {
 		return hobby;
 	}
 
-	public void setHobby(List<ZLUserHobbyDto> hobby) {
+	public void setHobby(List<HobbyDto> hobby) {
 		this.hobby = hobby;
 	}
+
+
 	
 	
 

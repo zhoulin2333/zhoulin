@@ -39,7 +39,7 @@ public class UserSearchServlet extends HttpServlet {
 
 		List<UserinfoHobbyDto> dtos = new ArrayList<UserinfoHobbyDto>();
 		
-		Map<String, String>  userNameMap  = new HashMap<String, String>();
+		//Map<String, String>  userNameMap  = new HashMap<String, String>();
 		//标识dtos是否被创建
 		List<String> userNames =  new ArrayList<String>();
 		

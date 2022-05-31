@@ -21,15 +21,24 @@
 <fullyQualifiedTypeName name="co.jp.netwisdom.dto.HobbyDto"/>
 <fullyQualifiedTypeName name="co.jp.zhoulin.dto.ZLuserHobbysDto"/>
 <fullyQualifiedTypeName name="java.sql.Array"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.form.UserForm"/>
 <fullyQualifiedTypeName name="org.apache.struts.action.Action"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="cn.key.mapping.UserNameMapping"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserNameDto"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.apache.taglibs.standard.lang.jpath.expression.Predicate"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="net.sf.json.JSONArray"/>
+<fullyQualifiedTypeName name="net.sf.json.JSONObject"/>
+<fullyQualifiedTypeName name="java.lang.OutOfMemoryError"/>
+<fullyQualifiedTypeName name="co.jp.zhoulin.dao.RxUserDAO"/>
+<fullyQualifiedTypeName name="co.jp.zhoulin.dto.ZLUserHobbyDto"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="co.jp.zhoulin.dto.HobbyDto"/>
+<fullyQualifiedTypeName name="java.lang.UnknownError"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.Request"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
