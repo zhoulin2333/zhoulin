@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="co.jp.netwisdom.entity.RxUser"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.entity.UserinfoHobby"/>
 <fullyQualifiedTypeName name="util.MsgUtil"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Hobby"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserinfoHobbyDto"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -21,7 +20,6 @@
 <fullyQualifiedTypeName name="co.jp.netwisdom.dto.HobbyDto"/>
 <fullyQualifiedTypeName name="co.jp.zhoulin.dto.ZLuserHobbysDto"/>
 <fullyQualifiedTypeName name="java.sql.Array"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.form.UserForm"/>
 <fullyQualifiedTypeName name="org.apache.struts.action.Action"/>
 <fullyQualifiedTypeName name="cn.key.mapping.UserNameMapping"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
@@ -36,9 +34,14 @@
 <fullyQualifiedTypeName name="co.jp.zhoulin.dto.ZLUserHobbyDto"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="co.jp.zhoulin.dto.HobbyDto"/>
 <fullyQualifiedTypeName name="java.lang.UnknownError"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.Request"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.form.UserForm"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Hobby"/>
+<fullyQualifiedTypeName name="oracle.jrockit.jfr.events.DataStructureDescriptor"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.service.UserRigsterService"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserDto"/>
 </qualifiedTypeNameHistroy>

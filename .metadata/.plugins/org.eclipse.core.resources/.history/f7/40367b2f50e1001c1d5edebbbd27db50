@@ -1,0 +1,6 @@
+package co.jp.netwisdom.dto;
+
+public class UserSearchDto {
+	
+
+}

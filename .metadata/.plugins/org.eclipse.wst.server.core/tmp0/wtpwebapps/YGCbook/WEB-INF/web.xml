@@ -740,7 +740,7 @@
   
   <servlet>
     <servlet-name>zlsearch</servlet-name>
-    <servlet-class>co.jp.zhoulin.servlet.Zlsearch</servlet-class>
+    <servlet-class>co.jp.zhoulin.servlet.ZlsearchServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>

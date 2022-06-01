@@ -80,6 +80,16 @@ public class ZlsearchServlet extends HttpServlet {
 				}
 			}
 		}
+		System.out.println("用户信息如下");
+		for(ZLuserHobbysDto list : dtos ){
+			System.out.println("-----------------");
+			System.out.println(list.getUsername());
+			System.out.println(list.getPassword());
+			System.out.println(list.getSex());
+			System.out.println(list.getHobby());
+			System.out.println(list.getMajor());
+			System.out.println(list.getIntro());
+		}
 		request.setAttribute("dtos", dtos);
 	}
 	

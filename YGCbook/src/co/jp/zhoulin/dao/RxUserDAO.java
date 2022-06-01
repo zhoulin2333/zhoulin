@@ -24,8 +24,11 @@ public class RxUserDAO {
 		String sql = "insert into userinfo(username,password,sex,major,intro)" +
 						" values(?,?,?,?,?)";
 		//将传入进来的值整合为一个数组
-		Object[] values = new Object[]{uxUser.getUsername(), uxUser.getPassword(), uxUser.getSex(),uxUser.getMajor(),uxUser.getIntro(),
-				                       
+		Object[] values = new Object[]{uxUser.getUsername(), 
+				uxUser.getPassword(), 
+				uxUser.getSex(),
+				uxUser.getMajor(),
+				uxUser.getIntro()
 										};
 		try {
 			row = template.updata(sql, values);
@@ -39,11 +42,11 @@ public class RxUserDAO {
 	
 	// 公共的 返回值为ZLUserHobby类型的List 方法名为 findNumAndHobby
 	public List<ZLUserHobbyDto> findNumAndHobby(String username,String sex,String major) {
-		String sql ="select  from userinfo left join hobby"
-				+ "on userinfo.username = hobby.username where";
+		String sql ="select userinfo.username,password,sex,major,intro,hobby from userinfo left join hobby"
+				+ " on userinfo.username = hobby.username where";
 	    
 	    if(!"".equals(username)){
-	    	sql = sql + "userinfo.username = '" + username +"' and";
+	    	sql = sql + " userinfo.username = '" + username +"' and";
 	    }
 		sql = sql + " sex = '" + sex + "'";
 		if(!"".equals(major)){
@@ -59,9 +62,6 @@ public class RxUserDAO {
 		}
 		
 		return list;
-			    
-	    
-		
 	}
 	
 

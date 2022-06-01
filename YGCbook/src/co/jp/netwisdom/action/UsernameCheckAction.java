@@ -13,25 +13,25 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import co.jp.netwisdom.dao.UserinfoDAO;
+import co.jp.netwisdom.dto.UserDelDto;
 import co.jp.netwisdom.dto.UserNameDto;
 import co.jp.netwisdom.form.UserForm;
+import co.jp.netwisdom.service.UsernameCheckService;
 
 
 
 public class UsernameCheckAction extends Action{
+	UsernameCheckService usernameCheckService = new UsernameCheckService();
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		UserForm  userForm = (UserForm)form;
+		UserDelDto dto = new UserDelDto();
 		//姓名
-		String username = userForm.getUsername();
-		//创建dao对象 使用查找名字方法
-		UserinfoDAO userinfoDAO = new UserinfoDAO();
-		//
+		dto.setUsername(userForm.getUsername());
+
         PrintWriter pw = response.getWriter();
-        List<UserNameDto> userNameDto = userinfoDAO.findName(username);
-        
-        
+        List<UserNameDto> userNameDto = usernameCheckService.usernameCheck(dto);
         //如果经查找 返回的数组为空
         if(userNameDto.size()>=1){
         	//如果经查找 返回的数组包含此名字，返回1

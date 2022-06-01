@@ -15,71 +15,36 @@ import org.apache.struts.action.ActionMapping;
 
 import co.jp.netwisdom.dao.HobbyDAO;
 import co.jp.netwisdom.dao.UserinfoDAO;
+import co.jp.netwisdom.dto.UserUpdateDto;
 import co.jp.netwisdom.entity.Hobby;
 import co.jp.netwisdom.entity.Userinfo;
 import co.jp.netwisdom.form.UserForm;
+import co.jp.netwisdom.service.UserUpdateService;
 
 public class UserUpdateAction extends Action{
+	UserUpdateService userUpdateService = new UserUpdateService();
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		UserForm  userForm = (UserForm)form;
+		UserUpdateDto dto = new UserUpdateDto();
 		//姓名
-		String username = userForm.getUsername();
+		dto.setUsername(userForm.getUsername());
 		//密码
-		String password = userForm.getPassword();
+		dto.setPassword(userForm.getPassword());
 		//性别
-		String sex = userForm.getSex();
-
+		dto.setSex(userForm.getSex());
 		//专业
-		String major = userForm.getMajor();
+		dto.setMajor(userForm.getMajor());
 		//简介
-		String intro = userForm.getIntro();
+		dto.setIntro(userForm.getIntro());
 		
 		//爱好 TODO
-		String[] hobbyArray = userForm.getHobby();
-
-		List hobbyList = new ArrayList();
+		dto.setHobbyArray(userForm.getHobby());
+        
 		
-		for(int i=0;i<hobbyArray.length;i++){
-			 
-			Hobby hobby1 = new Hobby();
-			hobby1.setUsername(username);
-			hobby1.setHobby(hobbyArray[i]);
-			hobbyList.add(hobby1);
-			
-		}	
-		UserinfoDAO userinfoDAO = new UserinfoDAO();
-		HobbyDAO hobbyDAO = new HobbyDAO();
+		userUpdateService.userUpdate(dto);
 		
-		//用户更新表Flag
-	    boolean updateUserInfoFlag1 = true;
-	    //用户信息表论理删除
-	    updateUserInfoFlag1 = userinfoDAO.delUserinfo(username);
-	    
-	    boolean updateUserInfoFlag2 = true;
-	    //进行更新操作
-	    updateUserInfoFlag2 = userinfoDAO.save(new Userinfo(username,password,sex,major,intro));
-
-        if(updateUserInfoFlag1==true && updateUserInfoFlag2 == true){
-        	System.out.println("用户信息表更新成功");
-        }else{
-        	System.out.println("用户信息更新失败");
-        }
-		//用户hobby更新表Flag
-	    boolean updateHobbyFlag = true;
-	    //用户hobby表论理删除
-	    updateHobbyFlag = hobbyDAO.delHobby(username);
-	    //进行更新操作
-	    updateHobbyFlag = hobbyDAO.save(hobbyList);
-        if(updateHobbyFlag=true){
-        	System.out.println("用户信息表更新成功");
-        }else{
-        	System.out.println("用户信息更新失败");
-        }
-
 		return mapping.findForward("UserUpdateSuccess");
-
-		
 	}
 }
