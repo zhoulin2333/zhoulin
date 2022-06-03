@@ -3,17 +3,20 @@ package co.jp.netwisdom.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.jp.netwisdom.dao.HobbyDAO;
-import co.jp.netwisdom.dao.UserinfoDAO;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+
+
 import co.jp.netwisdom.dto.UserRigsterDto;
 import co.jp.netwisdom.entity.Hobby;
 import co.jp.netwisdom.entity.Userinfo;
+import co.jp.netwisdom.mapper.HobbyMapper;
+import co.jp.netwisdom.mapper.UserinfoMapper;
+import co.jp.netwisdom.utils.MyBatisUtil;
 
 
 public class UserRigsterService {
-	private HobbyDAO hobbyDAO = new HobbyDAO();
-	private UserinfoDAO userinfoDAO = new UserinfoDAO();
-
 	public  boolean  userRigster(UserRigsterDto dto){
 		String[] hobbyArray = dto.getHobby(); 
 		List<Hobby> hobbyList = new ArrayList<>();
@@ -25,21 +28,30 @@ public class UserRigsterService {
 			hobby1.setHobby(hobbyArray[i]);
 			hobbyList.add(hobby1);
 		}
-	    boolean successFlag = true;
-		//用户信息表登录
-        if(userinfoDAO.save(new Userinfo(dto.getUsername(),dto.getPassword(),dto.getSex(),dto.getMajor(),dto.getIntro()))){
-        	System.out.println("用户信息表插入成功");
-        }else{
-        	System.out.println("用户信息表插入失败");
-        	successFlag =  false;
-        }
-        //用户爱好表登录
-        if(hobbyDAO.save(hobbyList)){
-        	System.out.println("用户爱好表插入成功");
-        }else{
-        	System.out.println("用户爱好表插入失败");
-        	successFlag =  false;
-        }
+	    boolean successFlag = false;
+        //1得到 session工厂
+    	SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
+    	//2得到session 
+    	SqlSession sqlSession = sqlSessionFactory.openSession();
+    	try{
+	    	//3得到mapper
+    		UserinfoMapper userinfoMapper = sqlSession.getMapper(UserinfoMapper.class);
+	    	HobbyMapper hobbyMapper = sqlSession.getMapper(HobbyMapper.class);
+	    	//4发出请求，执行数据库操作
+	    	userinfoMapper.save(new Userinfo(dto.getUsername(),dto.getPassword(),dto.getSex(),dto.getMajor(),dto.getIntro()));
+	    	for(Hobby hobby : hobbyList){
+	    		hobbyMapper.save(hobby.getUsername(), hobby.getHobby(), "0");
+	    	}
+	    	//需要提交
+	    	sqlSession.commit();
+	    	successFlag = true;
+    	}catch (Exception e) {
+    		sqlSession.rollback();
+    		successFlag = false;
+    		System.out.print("抓到错误");
+		}finally {
+			sqlSession.close();
+		}
         return successFlag;
 	}
 }

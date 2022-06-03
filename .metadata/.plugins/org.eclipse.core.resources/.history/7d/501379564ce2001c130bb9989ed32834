@@ -1,0 +1,8 @@
+package co.jp.netwisdom.mapper;
+
+import co.jp.netwisdom.entity.Userinfo;
+
+public interface UserinfoMapper {
+	public  void save(Userinfo userinfo,String delFlg);
+	
+}

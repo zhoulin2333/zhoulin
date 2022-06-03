@@ -16,7 +16,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.taglibs.standard.lang.jpath.expression.Predicate;
 
-import co.jp.netwisdom.dao.UserinfoDAO;
 import co.jp.netwisdom.dto.AjaxSearchUserDto;
 import co.jp.netwisdom.dto.HobbyDto;
 import co.jp.netwisdom.dto.UserinfoHobbyDto;

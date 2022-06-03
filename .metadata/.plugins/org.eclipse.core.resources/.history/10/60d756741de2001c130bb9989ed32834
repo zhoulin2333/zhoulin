@@ -1,0 +1,19 @@
+package co.jp.netwisdom.utils;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import co.jp.netwisdom.mapper.HobbyMapper;
+
+
+public class Test {
+	    public static void main(String[] args) {
+	    	SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
+	    	SqlSession sqlSession = sqlSessionFactory.openSession();
+	    	
+	    	HobbyMapper hobbyMapper = sqlSession.getMapper(HobbyMapper.class);
+	    	
+	    	hobbyMapper.save("aaa","0","0");
+	    	sqlSession.close();
+		}
+}

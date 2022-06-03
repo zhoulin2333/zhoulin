@@ -315,3 +315,4 @@
 0:0:0:0:0:0:0:1 - - [01/Jun/2022:14:52:35 +0900] "POST /YGCbook/searchUser.do?sex=1&major=&username= HTTP/1.1" 200 512
 0:0:0:0:0:0:0:1 - - [01/Jun/2022:14:52:35 +0900] "GET /YGCbook/userSearch.do?username=&sex=1&major= HTTP/1.1" 200 10556
 0:0:0:0:0:0:0:1 - - [01/Jun/2022:14:52:36 +0900] "GET /YGCbook/userSearch.do?username=&sex=1&major= HTTP/1.1" 200 10556
+0:0:0:0:0:0:0:1 - - [01/Jun/2022:17:50:05 +0900] "GET /YGCbook/userReg.jsp HTTP/1.1" 200 2175

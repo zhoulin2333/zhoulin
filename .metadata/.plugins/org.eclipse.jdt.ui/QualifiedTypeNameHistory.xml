@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="cn.key.dao.BookInfoDAO"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.dao.UserinfoDAO"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.dao.HobbyDAO"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Userinfo"/>
 <fullyQualifiedTypeName name="cn.key.mapping.USerInfoMapping"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.dao.RxUserDAO"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.entity.RxUser"/>
@@ -37,11 +33,31 @@
 <fullyQualifiedTypeName name="co.jp.zhoulin.dto.HobbyDto"/>
 <fullyQualifiedTypeName name="java.lang.UnknownError"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.Request"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.form.UserForm"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.entity.Hobby"/>
 <fullyQualifiedTypeName name="oracle.jrockit.jfr.events.DataStructureDescriptor"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.service.UserRigsterService"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserSearchDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.service.UserSearchService"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserUpdateInitDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.service.UserUpdateInitService"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserUpdateDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.service.UserUpdateService"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserRigsterDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.service.UserDelService"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.DelcheckedDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.service.DelcheckedService"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.AjaxSearchUserDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.service.AjaxSearchUserService"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserDelDto"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.service.UsernameCheckService"/>
+<fullyQualifiedTypeName name="cn.key.servlet.bookInfoServlet.SaveBookInfoServlet"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.mapper.HobbyMapper"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.mapper.UserinfoMapper"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Userinfo"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

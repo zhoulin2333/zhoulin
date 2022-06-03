@@ -13,8 +13,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 
-import co.jp.netwisdom.dao.HobbyDAO;
-import co.jp.netwisdom.dao.UserinfoDAO;
 import co.jp.netwisdom.dto.UserUpdateDto;
 import co.jp.netwisdom.entity.Hobby;
 import co.jp.netwisdom.entity.Userinfo;

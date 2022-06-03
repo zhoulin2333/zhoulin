@@ -16,3 +16,29 @@
 1654057587082	Rename type 'DelcheckedAction'
 1654058947538	Copy compilation unit
 1654058968055	Rename type 'AjaxSearchUserAction'
+1654066245498	Copy file
+1654072976977	Copy file
+1654073021946	Rename resource 'struts-config.xml'
+1654073870309	Copy compilation unit
+1654073960109	Rename type 'HobbyDAO'
+1654073989956	Copy file
+1654074006948	Rename resource 'MyBatis-config.xml'
+1654092923701	Delete element
+1654094145680	Rename package 'co.jp.netwisdom.mapper'
+1654094153964	Copy compilation unit
+1654094164855	Delete element
+1654094191461	Copy compilation unit
+1654094198192	Delete element
+1654094210138	Copy compilation unit
+1654094226189	Delete element
+1654095627592	Copy compilation unit
+1654095949539	Copy file
+1654096082336	Rename resource 'struts-config.xml'
+1654153453970	Delete element
+1654153478355	Delete element
+1654153729552	Delete element
+1654154535496	Copy compilation unit
+1654154558466	Rename type 'HobbyMapper2'
+1654154571795	Rename type 'UserinfoDAO'
+1654154594894	Copy file
+1654224628606	Delete element

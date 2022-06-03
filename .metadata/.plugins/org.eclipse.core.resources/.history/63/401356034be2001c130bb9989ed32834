@@ -1,0 +1,11 @@
+package co.jp.netwisdom.mapper;
+
+public interface UserinfoMapper {
+	public  void save(String username,
+			          String password,
+			          String sex,
+			          String major,
+			          String intro,
+			          String delflg);
+	
+}

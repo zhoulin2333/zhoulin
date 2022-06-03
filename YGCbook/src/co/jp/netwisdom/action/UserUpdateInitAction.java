@@ -1,13 +1,11 @@
 package co.jp.netwisdom.action;
 
- 
-import java.io.IOException;
-import java.util.ArrayList;
+
 
 import java.util.List;
 
 
-import javax.servlet.ServletException;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +15,6 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import co.jp.netwisdom.dao.UserinfoDAO;
 import co.jp.netwisdom.dto.HobbyDto;
 import co.jp.netwisdom.dto.UserUpdateInitDto;
 import co.jp.netwisdom.dto.UserinfoHobbyDto;

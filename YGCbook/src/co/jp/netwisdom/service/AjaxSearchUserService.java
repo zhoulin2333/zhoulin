@@ -1,36 +1,48 @@
 package co.jp.netwisdom.service;
 
 
-import java.io.PrintWriter;
+
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-import org.apache.struts.action.Action;
-import org.apache.struts.action.ActionForm;
-import org.apache.struts.action.ActionForward;
-import org.apache.struts.action.ActionMapping;
-import org.apache.taglibs.standard.lang.jpath.expression.Predicate;
 
-import co.jp.netwisdom.dao.UserinfoDAO;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+
 import co.jp.netwisdom.dto.AjaxSearchUserDto;
 import co.jp.netwisdom.dto.HobbyDto;
+
 import co.jp.netwisdom.dto.UserinfoHobbyDto;
 import co.jp.netwisdom.entity.UserinfoHobby;
-import co.jp.netwisdom.form.UserForm;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
+
+import co.jp.netwisdom.mapper.UserinfoMapper;
+import co.jp.netwisdom.utils.MyBatisUtil;
+
 
 public class AjaxSearchUserService {
-	private UserinfoDAO userinfoDAO = new UserinfoDAO();
-	
 	public List<UserinfoHobbyDto> ajaxSearchUser(AjaxSearchUserDto dto){
-		List<UserinfoHobby> list = userinfoDAO.findUserinfoAndHobby(dto.getUsername(), dto.getSex(), dto.getMajor());
-
+		List<UserinfoHobby> list = new ArrayList<>();
+    	//1得到 session工厂
+    	SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
+    	//2得到session 
+    	SqlSession sqlSession = sqlSessionFactory.openSession();
+     	try{
+	    	//3得到mapper
+     		UserinfoMapper userinfoMapper = sqlSession.getMapper(UserinfoMapper.class);
+	    	//4发出请求，执行数据库操作
+     		list = userinfoMapper.findUserinfoAndHobby(dto.getUsername(), dto.getSex(), dto.getMajor());
+	    	//需要提交
+	    	sqlSession.commit();
+    	}catch (Exception e) {
+    		sqlSession.rollback();
+    		System.out.print("抓到错误");
+		}finally {
+			sqlSession.close();
+		}
 		List<UserinfoHobbyDto> dtos = new ArrayList<UserinfoHobbyDto>();
 		
 		//标识dtos是否被创建

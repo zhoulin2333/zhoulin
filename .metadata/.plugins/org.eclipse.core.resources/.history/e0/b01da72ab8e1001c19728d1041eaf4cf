@@ -1,0 +1,15 @@
+package co.jp.netwisdom.utils;
+
+import java.sql.SQLException;
+import java.util.List;
+import cn.key.dbManager.JdbcTemplate;
+import cn.key.servlet.bookInfoServlet.SaveBookInfoServlet;
+import co.jp.netwisdom.entity.Hobby;
+
+public interface HobbyMapper {
+	public void save(String username,String hobby,String hobbdelflg);
+}
+
+	
+	
+	

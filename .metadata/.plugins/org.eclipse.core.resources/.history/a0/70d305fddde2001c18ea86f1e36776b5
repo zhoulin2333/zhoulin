@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.jp.netwisdom.mapper.UserinfoMapper">
+
+     <insert id="save" parameterType="co.jp.netwisdom.entity.Userinfo" >
+        insert into userinfo(username,password,sex,major,intro,delFlg)
+		              values(#{username},#{password},#{sex},#{major},#{intro},0)
+     </insert>
+     <update id="delUserinfo">
+        update userinfo set delFlg = '1' where username = #{username}
+     </update>
+     <select id="findUserinfoAndHobby" resultType = "co.jp.netwisdom.entity.UserinfoHobby">
+        select userinfo.username,password,sex,major,intro,hobby 
+        from userinfo left join hobby 
+        on userinfo.username = hobby.username 
+        where sex = #{1} and userinfo.delFlg = '0' and hobby.delFlg = '0'
+	    <if test='param1 != ""'>
+	     and userinfo.username = #{0}
+	    </if>
+	    <if test='param3 != ""'>
+	     and major = #{2} 
+	    </if>
+     </select>
+     <select id="findUserAndHobby"   resultType = "co.jp.netwisdom.entity.UserinfoHobby">
+        select  userinfo.username,password,sex,major,intro,hobby
+		from userinfo left join hobby
+        on userinfo.username = hobby.username where userinfo.username = #{}
+        and userinfo.delFlg = '0' and hobby.delFlg = '0'
+     </select>
+     
+     
+</mapper>

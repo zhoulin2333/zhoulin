@@ -5,18 +5,41 @@ package co.jp.netwisdom.service;
 import java.util.ArrayList;
 
 import java.util.List;
-import co.jp.netwisdom.dao.UserinfoDAO;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import co.jp.netwisdom.dto.HobbyDto;
+
 import co.jp.netwisdom.dto.UserUpdateInitDto;
 import co.jp.netwisdom.dto.UserinfoHobbyDto;
 import co.jp.netwisdom.entity.UserinfoHobby;
+import co.jp.netwisdom.mapper.UserinfoMapper;
+import co.jp.netwisdom.utils.MyBatisUtil;
 
 
 public class UserUpdateInitService {
-	private UserinfoDAO userinfoDAO = new UserinfoDAO();
-	public List<UserinfoHobbyDto> userUpdateInit(UserUpdateInitDto dto){
-		List<UserinfoHobby> list = userinfoDAO.findUserinfoAndHobby(dto.getUsername());
 
+	public List<UserinfoHobbyDto> userUpdateInit(UserUpdateInitDto dto){
+		List<UserinfoHobby> list = new ArrayList<>();
+    	//1得到 session工厂
+    	SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
+    	//2得到session 
+    	SqlSession sqlSession = sqlSessionFactory.openSession();
+     	try{
+	    	//3得到mapper
+     		UserinfoMapper userinfoMapper = sqlSession.getMapper(UserinfoMapper.class);
+	    	//4发出请求，执行数据库操作
+     		list = userinfoMapper.findUserAndHobby(dto.getUsername());
+	    	//需要提交
+	    	sqlSession.commit();
+	    	
+    	}catch (Exception e) {
+    		sqlSession.rollback();
+    		System.out.print("抓到错误");
+		}finally {
+			sqlSession.close();
+		}
 		List<UserinfoHobbyDto> dtos = new ArrayList<UserinfoHobbyDto>();
 		
 		//Map<String, String>  userNameMap  = new HashMap<String, String>();

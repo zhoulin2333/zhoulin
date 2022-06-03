@@ -12,7 +12,6 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import co.jp.netwisdom.dao.UserinfoDAO;
 import co.jp.netwisdom.dto.UserDelDto;
 import co.jp.netwisdom.dto.UserNameDto;
 import co.jp.netwisdom.form.UserForm;

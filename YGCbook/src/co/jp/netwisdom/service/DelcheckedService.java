@@ -1,39 +1,38 @@
 package co.jp.netwisdom.service;
 
-import co.jp.netwisdom.dao.HobbyDAO;
-import co.jp.netwisdom.dao.UserinfoDAO;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import co.jp.netwisdom.dto.DelcheckedDto;
+import co.jp.netwisdom.mapper.HobbyMapper;
+import co.jp.netwisdom.mapper.UserinfoMapper;
+import co.jp.netwisdom.utils.MyBatisUtil;
 
 
 public class DelcheckedService {
-	private HobbyDAO hobbyDAO = new HobbyDAO();
-	private UserinfoDAO userinfoDAO = new UserinfoDAO();
 	
 	public void delchecked(DelcheckedDto dto){
 
 		for(String username : dto.getUsernames()){
-
-				//用户更新表Flag
-			    boolean updateUserInfoFlag = true;
-			    //用户信息表论理删除
-			    updateUserInfoFlag = userinfoDAO.delUserinfo(username);
-			  
-		
-		        if(updateUserInfoFlag){
-		        	System.out.println("用户信息表删除成功");
-		        }else{
-		        	System.out.println("用户信息表删除失败");
-		        }
-		        
-				//用户hobby更新表Flag
-			    boolean updateHobbyFlag = true;
-			    //用户hobby表论理删除
-			    updateHobbyFlag = hobbyDAO.delHobby(username);
-		        if(updateHobbyFlag){
-		        	System.out.println("用户hobby表删除成功");
-		        }else{
-		        	System.out.println("用户hobby表删除失败");
-		        }
+		    	//1得到 session工厂
+		    	SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
+		    	//2得到session 
+		    	SqlSession sqlSession = sqlSessionFactory.openSession();
+		    	try{
+			    	//3得到mapper
+			    	HobbyMapper hobbyMapper = sqlSession.getMapper(HobbyMapper.class);
+			    	UserinfoMapper userinfoMapper = sqlSession.getMapper(UserinfoMapper.class);
+			    	//4发出请求，执行数据库操作
+			    	userinfoMapper.delUserinfo(username);
+			    	hobbyMapper.delHobby(username);
+			    	//需要提交
+			    	sqlSession.commit();
+		    	}catch (Exception e) {
+		    		sqlSession.rollback();
+		    		System.out.print("抓到错误");
+				}finally {
+					sqlSession.close();
+				}
 		}
 	}
 }
