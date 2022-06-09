@@ -1,8 +1,6 @@
 package co.jp.netwisdom.action;
 
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,16 +9,16 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import co.jp.netwisdom.dto.UserUpdateDto;
-import co.jp.netwisdom.entity.Hobby;
-import co.jp.netwisdom.entity.Userinfo;
 import co.jp.netwisdom.form.UserForm;
 import co.jp.netwisdom.service.UserUpdateService;
-
+@Controller(value="/userUpdate")
 public class UserUpdateAction extends Action{
-	UserUpdateService userUpdateService = new UserUpdateService();
+	@Autowired
+	private UserUpdateService userUpdateService = new UserUpdateService();
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -45,4 +43,11 @@ public class UserUpdateAction extends Action{
 		
 		return mapping.findForward("UserUpdateSuccess");
 	}
+	public UserUpdateService getUserUpdateService() {
+		return userUpdateService;
+	}
+	public void setUserUpdateService(UserUpdateService userUpdateService) {
+		this.userUpdateService = userUpdateService;
+	}
+	
 }

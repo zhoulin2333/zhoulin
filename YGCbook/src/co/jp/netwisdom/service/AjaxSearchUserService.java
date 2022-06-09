@@ -9,9 +9,8 @@ import java.util.List;
 
 
 
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import co.jp.netwisdom.dto.AjaxSearchUserDto;
 import co.jp.netwisdom.dto.HobbyDto;
@@ -20,29 +19,25 @@ import co.jp.netwisdom.dto.UserinfoHobbyDto;
 import co.jp.netwisdom.entity.UserinfoHobby;
 
 import co.jp.netwisdom.mapper.UserinfoMapper;
-import co.jp.netwisdom.utils.MyBatisUtil;
 
-
+@Service
 public class AjaxSearchUserService {
+	//3得到mapper
+	@Autowired
+	UserinfoMapper userinfoMapper;
+	
+	
 	public List<UserinfoHobbyDto> ajaxSearchUser(AjaxSearchUserDto dto){
+		
+//    	//1得到 session工厂
+//    	SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
+//    	//2得到session 
+//    	SqlSession sqlSession = sqlSessionFactory.openSession();
+		
 		List<UserinfoHobby> list = new ArrayList<>();
-    	//1得到 session工厂
-    	SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
-    	//2得到session 
-    	SqlSession sqlSession = sqlSessionFactory.openSession();
-     	try{
-	    	//3得到mapper
-     		UserinfoMapper userinfoMapper = sqlSession.getMapper(UserinfoMapper.class);
-	    	//4发出请求，执行数据库操作
-     		list = userinfoMapper.findUserinfoAndHobby(dto.getUsername(), dto.getSex(), dto.getMajor());
-	    	//需要提交
-	    	sqlSession.commit();
-    	}catch (Exception e) {
-    		sqlSession.rollback();
-    		System.out.print("抓到错误");
-		}finally {
-			sqlSession.close();
-		}
+        list = userinfoMapper.findUserinfoAndHobby(dto.getUsername(), dto.getSex(), dto.getMajor());
+        System.out.print(list.size());
+	
 		List<UserinfoHobbyDto> dtos = new ArrayList<UserinfoHobbyDto>();
 		
 		//标识dtos是否被创建

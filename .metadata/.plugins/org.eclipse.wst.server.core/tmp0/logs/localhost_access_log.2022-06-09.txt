@@ -1,0 +1,10 @@
+127.0.0.1 - - [09/Jun/2022:09:13:49 +0900] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [09/Jun/2022:09:17:53 +0900] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:09:24:19 +0900] "GET /YGCbook/userReg.jsp HTTP/1.1" 200 2175
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:09:24:19 +0900] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:09:24:23 +0900] "POST /YGCbook/usernameCheck.do?username=123 HTTP/1.1" 200 1
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:09:24:37 +0900] "GET /YGCbook/userRegister.do?username=123&password=kkk&sex=0&hobby=1&major=0&intro=k HTTP/1.1" 200 357
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:09:24:45 +0900] "GET /YGCbook/usersearch.jsp HTTP/1.1" 200 5298
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:09:24:46 +0900] "GET /YGCbook/userSearch.do?username=&sex=0&major= HTTP/1.1" 200 10513
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:09:24:48 +0900] "GET /YGCbook/userUpdateInit.do?username=wang HTTP/1.1" 200 2315
+0:0:0:0:0:0:0:1 - - [09/Jun/2022:09:24:51 +0900] "GET /YGCbook/userUpdate.do?username=wang&password=asdas&sex=1&hobby=2&major=2&intro=sasd HTTP/1.1" 200 373

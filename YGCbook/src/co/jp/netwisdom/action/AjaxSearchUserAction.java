@@ -15,6 +15,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.taglibs.standard.lang.jpath.expression.Predicate;
+import org.springframework.stereotype.Controller;
 
 import co.jp.netwisdom.dto.AjaxSearchUserDto;
 import co.jp.netwisdom.dto.HobbyDto;
@@ -24,7 +25,7 @@ import co.jp.netwisdom.form.UserForm;
 import co.jp.netwisdom.service.AjaxSearchUserService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-
+@Controller(value="/searchUser")
 public class AjaxSearchUserAction extends Action{
 	AjaxSearchUserService ajaxSearchUserService = new  AjaxSearchUserService();
 	@Override

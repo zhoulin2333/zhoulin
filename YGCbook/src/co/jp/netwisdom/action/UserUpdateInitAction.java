@@ -14,6 +14,8 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import co.jp.netwisdom.dto.HobbyDto;
 import co.jp.netwisdom.dto.UserUpdateInitDto;
@@ -21,9 +23,10 @@ import co.jp.netwisdom.dto.UserinfoHobbyDto;
 import co.jp.netwisdom.entity.UserinfoHobby;
 import co.jp.netwisdom.form.UserForm;
 import co.jp.netwisdom.service.UserUpdateInitService;
-
+@Controller(value="/userUpdateInit")
 public class UserUpdateInitAction extends Action {
-	UserUpdateInitService userUpdateInitServicenew = new UserUpdateInitService();
+	@Autowired
+	private UserUpdateInitService userUpdateInitServicenew = new UserUpdateInitService();
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -36,4 +39,11 @@ public class UserUpdateInitAction extends Action {
 		request.setAttribute("dto",dtos.get(0));
 	    return mapping.findForward("UserUpdateInitSuccess");
 	}
+	public UserUpdateInitService getUserUpdateInitServicenew() {
+		return userUpdateInitServicenew;
+	}
+	public void setUserUpdateInitServicenew(UserUpdateInitService userUpdateInitServicenew) {
+		this.userUpdateInitServicenew = userUpdateInitServicenew;
+	}
+	
 }

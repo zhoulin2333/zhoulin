@@ -11,14 +11,16 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import co.jp.netwisdom.dto.UserDelDto;
 import co.jp.netwisdom.form.UserForm;
 import co.jp.netwisdom.service.UserDelService;
-
+@Controller(value="/userDel")
 public class UserDelAction extends Action {
-	UserDelService userDelService = new UserDelService();
+	@Autowired
+	private UserDelService userDelService = new UserDelService();
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
@@ -32,4 +34,13 @@ public class UserDelAction extends Action {
 	
 	    return mapping.findForward("UserDelSuccess");
 	}
+
+	public UserDelService getUserDelService() {
+		return userDelService;
+	}
+
+	public void setUserDelService(UserDelService userDelService) {
+		this.userDelService = userDelService;
+	}
+	
 }

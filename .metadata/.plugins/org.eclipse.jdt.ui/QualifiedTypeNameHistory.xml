@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="cn.key.mapping.USerInfoMapping"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.dao.RxUserDAO"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.entity.RxUser"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.entity.UserinfoHobby"/>
-<fullyQualifiedTypeName name="util.MsgUtil"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.dto.UserinfoHobbyDto"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.entity.Myhobby"/>
@@ -29,11 +23,9 @@
 <fullyQualifiedTypeName name="co.jp.zhoulin.dao.RxUserDAO"/>
 <fullyQualifiedTypeName name="co.jp.zhoulin.dto.ZLUserHobbyDto"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="co.jp.zhoulin.dto.HobbyDto"/>
 <fullyQualifiedTypeName name="java.lang.UnknownError"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.Request"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.form.UserForm"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.entity.Hobby"/>
 <fullyQualifiedTypeName name="oracle.jrockit.jfr.events.DataStructureDescriptor"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.service.UserRigsterService"/>
@@ -56,8 +48,16 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.mapper.HobbyMapper"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="co.jp.netwisdom.mapper.UserinfoMapper"/>
-<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Userinfo"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.entity.Userinfo"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="java.text.Normalizer.Form"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.form.UserForm"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="co.jp.netwisdom.dao.UserinfoDAO"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
 </qualifiedTypeNameHistroy>

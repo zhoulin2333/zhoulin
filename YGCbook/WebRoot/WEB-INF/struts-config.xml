@@ -11,50 +11,50 @@
         
      <action-mappings>      
         <action path="/userRegister"
-                type="co.jp.netwisdom.action.UserRigsterAction"
+                type="org.springframework.web.struts.DelegatingActionProxy"
                 name="UserForm"
                 scope="request">
                 <forward name="UserRigSuccess" path="/userRegsuccess.jsp"/>
                 <forward name="UserRigError" path="/userRegErr.jsp"/>
         </action>
         <action path="/userSearch"
-                type="co.jp.netwisdom.action.UserSearchAction"
+                type="org.springframework.web.struts.DelegatingActionProxy"
                 name="UserForm"
                 scope="request">
                 <forward name="UserSearchSuccess" path="/usersearch.jsp"/>
  
         </action>
         <action path="/userUpdateInit"
-                type="co.jp.netwisdom.action.UserUpdateInitAction"
+                type="org.springframework.web.struts.DelegatingActionProxy"
                 name="UserForm"
                 scope="request">
                 <forward name="UserUpdateInitSuccess" path="/userReg.jsp"/>
         </action>
         <action path="/userUpdate"
-                type="co.jp.netwisdom.action.UserUpdateAction"
+                type="org.springframework.web.struts.DelegatingActionProxy"
                 name="UserForm"
                 scope="request">
                 <forward name="UserUpdateSuccess" path="/userUpdatesuccess.jsp"/>
         </action>
         <action path="/userDel"
-                type="co.jp.netwisdom.action.UserDelAction"
+                type="org.springframework.web.struts.DelegatingActionProxy"
                 name="UserForm"
                 scope="request">
                 <forward name="UserDelSuccess" path="/usersearch.jsp"/>
         </action>
         <action path="/delchecked"
-                type="co.jp.netwisdom.action.DelcheckedAction"
+                type="org.springframework.web.struts.DelegatingActionProxy"
                 name="UserForm"
                 scope="request">
                 <forward name="delcheckedSuccess" path="/usersearch.jsp"/>
         </action>
         <action path="/usernameCheck"
-                type="co.jp.netwisdom.action.UsernameCheckAction"
+                type="org.springframework.web.struts.DelegatingActionProxy"
                 name="UserForm"
                 scope="request">
         </action>
         <action path="/searchUser"
-                type="co.jp.netwisdom.action.AjaxSearchUserAction"
+                type="org.springframework.web.struts.DelegatingActionProxy"
                 name="UserForm"
                 scope="request">
         </action>
@@ -62,4 +62,8 @@
         
     </action-mappings>
     <message-resources key = "userResource"  parameter="ApplicationResources_zh_CN"/>
+    
+     <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+       <set-property property="contextConfigLocation"    value="/WEB-INF/classes/applicationContext.xml,/WEB-INF/classes/spring-mybatis.xml"/>
+    </plug-in> 
 </struts-config>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+        <form-beans>
+           <form-bean name="UserForm" type="co.jp.netwisdom.form.UserForm"/> 
+
+        </form-beans>
+        
+     <action-mappings>      
+        <action path="/userRegister"
+                type="co.jp.netwisdom.action.UserRigsterAction"
+                name="UserForm"
+                scope="request">
+                <forward name="UserRigSuccess" path="/userRegsuccess.jsp"/>
+                <forward name="UserRigError" path="/userRegErr.jsp"/>
+        </action>
+        <action path="/userSearch"
+                type="co.jp.netwisdom.action.UserSearchAction"
+                name="UserForm"
+                scope="request">
+                <forward name="UserSearchSuccess" path="/usersearch.jsp"/>
+ 
+        </action>
+        <action path="/userUpdateInit"
+                type="co.jp.netwisdom.action.UserUpdateInitAction"
+                name="UserForm"
+                scope="request">
+                <forward name="UserUpdateInitSuccess" path="/userReg.jsp"/>
+        </action>
+        <action path="/userUpdate"
+                type="co.jp.netwisdom.action.UserUpdateAction"
+                name="UserForm"
+                scope="request">
+                <forward name="UserUpdateSuccess" path="/userUpdatesuccess.jsp"/>
+        </action>
+        <action path="/userDel"
+                type="co.jp.netwisdom.action.UserDelAction"
+                name="UserForm"
+                scope="request">
+                <forward name="UserDelSuccess" path="/usersearch.jsp"/>
+        </action>
+        <action path="/delchecked"
+                type="co.jp.netwisdom.action.DelcheckedAction"
+                name="UserForm"
+                scope="request">
+                <forward name="delcheckedSuccess" path="/usersearch.jsp"/>
+        </action>
+        <action path="/usernameCheck"
+                type="co.jp.netwisdom.action.UsernameCheckAction"
+                name="UserForm"
+                scope="request">
+        </action>
+        <action path="/searchUser"
+                type="co.jp.netwisdom.action.AjaxSearchUserAction"
+                name="UserForm"
+                scope="request">
+        </action>
+        
+        
+    </action-mappings>
+    <message-resources key = "userResource"  parameter="ApplicationResources_zh_CN"/>
+    
+    <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+       <set-property property="contextConfigLocation"    value="/WEB-INF/action-servlet.xml,/WEB-INF/applicationContext.xml"/>
+    </plug-in>
+</struts-config>

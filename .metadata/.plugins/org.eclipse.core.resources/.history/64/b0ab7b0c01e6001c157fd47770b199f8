@@ -1,0 +1,17 @@
+package co.jp.netwisdom.utils;
+
+import java.text.Normalizer.Form;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import co.jp.netwisdom.form.UserForm;
+
+public class Test2 {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+		UserForm userForm = (UserForm)ctx.getBean("userForm");
+	    System.out.println(userForm.getUsername());
+		
+	}
+
+}

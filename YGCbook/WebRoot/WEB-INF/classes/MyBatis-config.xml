@@ -15,6 +15,6 @@
      </environments>
      <mappers>
          <mapper resource="co/jp/netwisdom/mapper/HobbyMapper.xml"/>
-         <mapper resource="co/jp/netwisdom/mapper/UserinfoMapper.xml"/>
+         <mapper resource="co/jp/netwisdom/mapper/UserinfoMapper.xml"/> 
      </mappers>
 </configuration>

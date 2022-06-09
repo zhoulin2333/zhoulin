@@ -1,8 +1,0 @@
-package co.jp.netwisdom.dto;
-
-public class Snippet {
-	public static void main(String[] args) {
-		UserDelService
-	}
-}
-

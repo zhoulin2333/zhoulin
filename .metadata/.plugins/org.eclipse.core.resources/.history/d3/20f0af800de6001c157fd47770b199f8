@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+    <!-- 把容器中-->
+    
+    <!-- DAO STRAT -->
+    <bean name="userinfoDAO" class="co.jp.netwisdom.dao.UserinfoDAO">
+         <property name="username" value="zhangsan"></property>
+         <property name="template" ref="jdbcTemplate"></property>
+         
+    </bean>
+         
+    <!-- DAO END -->
+        <!-- DAO STRAT -->
+    <bean name="jdbcTemplate" class="cn.key.dbManager.JdbcTemplate">
+    </bean>
+         
+    <!-- DAO END -->
+    
+    
+</beans>

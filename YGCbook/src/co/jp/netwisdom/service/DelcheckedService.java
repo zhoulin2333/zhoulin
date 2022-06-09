@@ -1,38 +1,25 @@
 package co.jp.netwisdom.service;
 
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import co.jp.netwisdom.dto.DelcheckedDto;
 import co.jp.netwisdom.mapper.HobbyMapper;
 import co.jp.netwisdom.mapper.UserinfoMapper;
-import co.jp.netwisdom.utils.MyBatisUtil;
 
-
+@Service
 public class DelcheckedService {
-	
+	//3得到mapper
+	@Autowired
+	HobbyMapper hobbyMapper ;
+	@Autowired
+	UserinfoMapper userinfoMapper;
 	public void delchecked(DelcheckedDto dto){
 
 		for(String username : dto.getUsernames()){
-		    	//1得到 session工厂
-		    	SqlSessionFactory sqlSessionFactory = MyBatisUtil.getSqlSessionFactory();
-		    	//2得到session 
-		    	SqlSession sqlSession = sqlSessionFactory.openSession();
-		    	try{
-			    	//3得到mapper
-			    	HobbyMapper hobbyMapper = sqlSession.getMapper(HobbyMapper.class);
-			    	UserinfoMapper userinfoMapper = sqlSession.getMapper(UserinfoMapper.class);
-			    	//4发出请求，执行数据库操作
-			    	userinfoMapper.delUserinfo(username);
-			    	hobbyMapper.delHobby(username);
-			    	//需要提交
-			    	sqlSession.commit();
-		    	}catch (Exception e) {
-		    		sqlSession.rollback();
-		    		System.out.print("抓到错误");
-				}finally {
-					sqlSession.close();
-				}
+	    	userinfoMapper.delUserinfo(username);
+	    	hobbyMapper.delHobby(username);
 		}
 	}
 }

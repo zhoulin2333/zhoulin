@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="co.jp.netwisdom.service,co.jp.netwisdom.action,co.jp.netwisdom.mapper"></context:component-scan>
+    
+    <!-- 配置数据源 STARt -->
+    <bean id="dataSource" class="org.apache.ibatis.dataSource.pooled.DruidataSource" >
+                 <property name="driver" value="com.mysql.jdbc.Driver" />
+                 <property name="url" value="jdbc:mysql://localhost:3306/ygcbook"/>
+                 <property name="username" value="root"/>
+                 <property name="password" value=""/>
+    </bean>
+    <bean id="dataSource" class="com.mysql.jdbc.MysqlDataSource" >
+                 <property name="url" value="jdbc:mysql://localhost:3306/ygcbook"/>
+                 <property name="name" value="root"/>
+                 <property name="password" value=""/>
+    </bean>
+    <!-- 配置数据源END -->
+    
+    
+    <!--sqlSessionFactory START  -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+                 <property name="configLocation" value="classpath:MyBatis-config.xml"/>
+                 <property name="dataSource" ref="dataSource"/>
+                 <property name="mapperLocation" value="mapper/*.xml"/>
+    </bean>
+    <!--sqlSessionFactory END -->
+     
+     
+    <!-- Service START -->
+    <bean id="userRigsterService" class="co.jp.netwisdom.service.UserRigsterService">
+                 <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+     
+    <!-- Service END -->
+     
+       
+     
+<!--     Action STRAT
+    <bean name="/userRegister" class="co.jp.netwisdom.action.UserRigsterAction">
+    </bean>
+         
+    Action END
+    
+    Service STRAT
+    <bean id="userRigsterService" class="co.jp.netwisdom.service.UserRigsterService">
+    </bean>
+    Service END -->
+
+
+    
+</beans>

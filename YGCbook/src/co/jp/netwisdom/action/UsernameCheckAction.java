@@ -11,6 +11,8 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import co.jp.netwisdom.dto.UserDelDto;
 import co.jp.netwisdom.dto.UserNameDto;
@@ -18,9 +20,10 @@ import co.jp.netwisdom.form.UserForm;
 import co.jp.netwisdom.service.UsernameCheckService;
 
 
-
+@Controller(value="/usernameCheck")
 public class UsernameCheckAction extends Action{
-	UsernameCheckService usernameCheckService = new UsernameCheckService();
+	@Autowired
+	private UsernameCheckService usernameCheckService = new UsernameCheckService();
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -41,4 +44,11 @@ public class UsernameCheckAction extends Action{
         }
 		return null;
 	}
+	public UsernameCheckService getUsernameCheckService() {
+		return usernameCheckService;
+	}
+	public void setUsernameCheckService(UsernameCheckService usernameCheckService) {
+		this.usernameCheckService = usernameCheckService;
+	}
+	
 }

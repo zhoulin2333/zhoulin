@@ -7,15 +7,17 @@ import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import co.jp.netwisdom.dto.DelcheckedDto;
 import co.jp.netwisdom.form.UserForm;
 import co.jp.netwisdom.service.DelcheckedService;
-
+@Controller(value="/delchecked")
 public class DelcheckedAction extends Action {
+	@Autowired
 	//一括删除
-	DelcheckedService delcheckedService = new DelcheckedService();
+	private DelcheckedService delcheckedService = new DelcheckedService();
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
@@ -29,4 +31,13 @@ public class DelcheckedAction extends Action {
 	    return mapping.findForward("delcheckedSuccess");
 	
 	}
+
+	public DelcheckedService getDelcheckedService() {
+		return delcheckedService;
+	}
+
+	public void setDelcheckedService(DelcheckedService delcheckedService) {
+		this.delcheckedService = delcheckedService;
+	}
+	
 }

@@ -1,4 +1,4 @@
-package co.jp.netwisdom.dto;
+ package co.jp.netwisdom.dto;
 
 public class UserRigsterDto {
 	//姓名
